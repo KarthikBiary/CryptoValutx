@@ -70,6 +70,23 @@ export interface CreateAccountResponse {
 }
 
 export async function createAccount(): Promise<CreateAccountResponse> {
-  const response = await apiRequest("POST", "/api/auth/create", {});
-  return response.json();
+  try {
+    const response = await apiRequest("POST", "/api/auth/create", {});
+    const text = await response.text();
+    
+    if (!text) {
+      throw new Error("Empty response from server");
+    }
+    
+    try {
+      return JSON.parse(text);
+    } catch (parseError) {
+      console.error("JSON parse error:", parseError);
+      console.error("Response text:", text);
+      throw new Error("Invalid response format from server");
+    }
+  } catch (error) {
+    console.error("Create account error:", error);
+    throw error;
+  }
 }

@@ -25,12 +25,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const address = generateAddress(privateKey);
       const publicKey = `PUB${privateKey.slice(-10)}`;
       
-      res.json({
+      const response = {
         privateKey,
         address,
         publicKey,
         message: "New wallet created successfully! Please save your private key securely."
-      });
+      };
+      
+      console.log("Create account response:", response);
+      res.setHeader('Content-Type', 'application/json');
+      res.json(response);
     } catch (error) {
       console.error("Create account error:", error);
       res.status(500).json({ message: "Failed to create account" });
