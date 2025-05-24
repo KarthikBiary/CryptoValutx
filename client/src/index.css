@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 15 12% 14%; /* #0F0F23 */
+  --foreground: 0 0% 100%; /* #FFFFFF */
+  --muted: 220 13% 18%; /* #1A1B3A */
+  --muted-foreground: 220 9% 72%; /* #B8BCC8 */
+  --popover: 220 13% 18%; /* #1A1B3A */
+  --popover-foreground: 0 0% 100%; /* #FFFFFF */
+  --card: 220 13% 18%; /* #1A1B3A */
+  --card-foreground: 0 0% 100%; /* #FFFFFF */
+  --border: 220 13% 41%; /* #515470 */
+  --input: 215 16% 47%; /* #64748B */
+  --primary: 258 90% 66%; /* #9945FF */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 220 13% 18%; /* #1A1B3A */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --accent: 158 64% 52%; /* #14F195 */
+  --accent-foreground: 15 12% 14%; /* #0F0F23 */
+  --destructive: 0 84% 60%; /* #FF4444 */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 258 90% 66%; /* #9945FF */
+  --radius: 0.5rem;
+  
+  /* Custom Solana colors */
+  --solana-purple: 258 90% 66%; /* #9945FF */
+  --solana-green: 158 64% 52%; /* #14F195 */
+  --dark-bg: 15 12% 14%; /* #0F0F23 */
+  --text-secondary: 220 9% 72%; /* #B8BCC8 */
+  --text-muted: 215 16% 47%; /* #64748B */
+}
+
+.dark {
+  --background: 15 12% 14%; /* #0F0F23 */
+  --foreground: 0 0% 100%; /* #FFFFFF */
+  --muted: 220 13% 18%; /* #1A1B3A */
+  --muted-foreground: 220 9% 72%; /* #B8BCC8 */
+  --popover: 220 13% 18%; /* #1A1B3A */
+  --popover-foreground: 0 0% 100%; /* #FFFFFF */
+  --card: 220 13% 18%; /* #1A1B3A */
+  --card-foreground: 0 0% 100%; /* #FFFFFF */
+  --border: 220 13% 41%; /* #515470 */
+  --input: 215 16% 47%; /* #64748B */
+  --primary: 258 90% 66%; /* #9945FF */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  --secondary: 220 13% 18%; /* #1A1B3A */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  --accent: 158 64% 52%; /* #14F195 */
+  --accent-foreground: 15 12% 14%; /* #0F0F23 */
+  --destructive: 0 84% 60%; /* #FF4444 */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  --ring: 258 90% 66%; /* #9945FF */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: hsl(var(--background));
+  }
+}
+
+@layer utilities {
+  .solana-purple {
+    color: hsl(var(--solana-purple));
+  }
+  
+  .solana-green {
+    color: hsl(var(--solana-green));
+  }
+  
+  .bg-solana-purple {
+    background-color: hsl(var(--solana-purple));
+  }
+  
+  .bg-solana-green {
+    background-color: hsl(var(--solana-green));
+  }
+  
+  .text-secondary {
+    color: hsl(var(--text-secondary));
+  }
+  
+  .text-muted {
+    color: hsl(var(--text-muted));
+  }
+  
+  .gradient-purple {
+    background: linear-gradient(135deg, hsl(var(--solana-purple)), hsl(270 70% 60%));
+  }
+  
+  .gradient-green {
+    background: linear-gradient(135deg, hsl(var(--solana-green)), hsl(160 70% 50%));
+  }
+}
