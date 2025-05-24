@@ -257,12 +257,12 @@ export default function CreateAccountPage({ onBackToLogin, onAccountCreated }: C
               <Button
                 onClick={() => createMutation.mutate()}
                 disabled={createMutation.isPending}
-                className="w-full gradient-purple hover:opacity-90 text-white font-medium transition-all duration-200 transform hover:scale-[1.02]"
+                className="w-full gradient-purple hover:opacity-90 text-white font-medium transition-all duration-200 transform hover:scale-[1.02] animate-pulse-glow"
               >
                 {createMutation.isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Creating Wallet...
+                    <span className="shimmer">Creating Wallet...</span>
                   </>
                 ) : (
                   "Create New Wallet"

@@ -185,7 +185,7 @@ export default function Dashboard({ walletData: initialData, onLogout }: Dashboa
                         </p>
                       </div>
                     ) : (
-                      walletData.transactions.slice(0, 3).map((transaction) => (
+                      walletData.transactions.slice(0, 3).map((transaction: any) => (
                         <TransactionItem
                           key={transaction.id}
                           transaction={transaction}
