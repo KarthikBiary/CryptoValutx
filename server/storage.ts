@@ -114,6 +114,7 @@ export class MemStorage implements IStorage {
       ...insertWallet, 
       id,
       createdAt: new Date(),
+      isDemo: insertWallet.isDemo ?? false,
     };
     this.wallets.set(id, wallet);
     return wallet;
@@ -131,6 +132,9 @@ export class MemStorage implements IStorage {
       ...insertTransaction, 
       id,
       timestamp: new Date(),
+      walletId: insertTransaction.walletId ?? null,
+      status: insertTransaction.status ?? "confirmed",
+      fee: insertTransaction.fee ?? null,
     };
     this.transactions.set(id, transaction);
     return transaction;
@@ -148,6 +152,7 @@ export class MemStorage implements IStorage {
       ...insertConversation, 
       id,
       timestamp: new Date(),
+      walletId: insertConversation.walletId ?? null,
     };
     this.aiConversations.set(id, conversation);
     return conversation;

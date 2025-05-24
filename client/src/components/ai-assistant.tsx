@@ -135,13 +135,17 @@ export default function AIAssistant({ isOpen, onClose, walletId }: AIAssistantPr
           
           {aiMutation.isPending && (
             <div className="flex items-start space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                <Lightbulb className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center animate-pulse">
+                <Lightbulb className="w-4 h-4 text-white animate-pulse" />
               </div>
               <div className="bg-background rounded-lg p-3 flex-1">
                 <div className="flex items-center space-x-2">
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  <span className="text-sm text-secondary">Thinking...</span>
+                  <Loader2 className="w-4 h-4 animate-spin text-purple-500" />
+                  <span className="text-sm text-secondary typing-animation">AI is thinking...</span>
+                </div>
+                <div className="mt-2">
+                  <div className="shimmer h-3 rounded mb-1"></div>
+                  <div className="shimmer h-3 rounded w-3/4"></div>
                 </div>
               </div>
             </div>

@@ -151,10 +151,11 @@ export default function Dashboard({ walletData: initialData, onLogout }: Dashboa
                           key={action.id}
                           variant="ghost"
                           onClick={() => handleQuickAction(action.id)}
-                          className="flex flex-col items-center p-4 h-auto bg-background hover:bg-secondary/10 transition-colors"
+                          className="quick-action flex flex-col items-center p-4 h-auto bg-background hover:bg-secondary/10 transition-all duration-300 group"
                         >
-                          <Icon className={`w-8 h-8 mb-2 ${action.color}`} />
-                          <span className="text-sm font-medium">{action.label}</span>
+                          <Icon className={`w-8 h-8 mb-2 ${action.color} group-hover:scale-110 transition-transform duration-300`} />
+                          <span className="text-sm font-medium group-hover:text-foreground transition-colors">{action.label}</span>
+                          <span className="text-xs text-muted mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{action.description}</span>
                         </Button>
                       );
                     })}

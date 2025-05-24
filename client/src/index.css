@@ -98,4 +98,95 @@
   .gradient-green {
     background: linear-gradient(135deg, hsl(var(--solana-green)), hsl(160 70% 50%));
   }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--solana-purple) / 0.5);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(var(--solana-purple) / 0.8), 0 0 40px hsl(var(--solana-purple) / 0.3);
+    }
+  }
+
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .balance-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .balance-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .transaction-item {
+    transition: all 0.2s ease;
+  }
+
+  .transaction-item:hover {
+    transform: translateX(4px);
+    background-color: hsl(var(--muted) / 0.5);
+  }
+
+  .quick-action {
+    transition: all 0.2s ease;
+  }
+
+  .quick-action:hover {
+    transform: scale(1.05);
+    background-color: hsl(var(--solana-purple) / 0.1);
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted)) 0%, 
+      hsl(var(--muted-foreground) / 0.2) 20%, 
+      hsl(var(--muted)) 40%, 
+      hsl(var(--muted))
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--solana-purple));
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: hsl(var(--solana-purple)) }
+  }
 }

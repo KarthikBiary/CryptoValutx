@@ -51,19 +51,19 @@ export default function TransactionItem({ transaction, walletAddress }: Transact
   };
 
   return (
-    <div className="bg-background rounded-lg p-4">
+    <div className="bg-background rounded-lg p-4 transaction-item hover-lift cursor-pointer">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div
             className={cn(
-              "w-12 h-12 rounded-lg flex items-center justify-center",
-              isReceive ? "bg-solana-green/20" : "bg-red-500/20"
+              "w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110",
+              isReceive ? "bg-solana-green/20 hover:bg-solana-green/30" : "bg-red-500/20 hover:bg-red-500/30"
             )}
           >
             {isReceive ? (
-              <ArrowDown className="w-6 h-6 text-[hsl(var(--solana-green))]" />
+              <ArrowDown className="w-6 h-6 text-[hsl(var(--solana-green))] animate-bounce" />
             ) : (
-              <Send className="w-6 h-6 text-red-400" />
+              <Send className="w-6 h-6 text-red-400 hover:rotate-12 transition-transform duration-300" />
             )}
           </div>
           <div>
