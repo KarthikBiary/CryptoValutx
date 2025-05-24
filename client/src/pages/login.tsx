@@ -17,7 +17,7 @@ interface LoginPageProps {
   onCreateAccount: () => void;
 }
 
-export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
+export default function LoginPage({ onLoginSuccess, onCreateAccount }: LoginPageProps) {
   const [isDemo, setIsDemo] = useState(false);
   const { toast } = useToast();
 
@@ -138,6 +138,21 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
                   ) : (
                     "Try Demo Account"
                   )}
+                </Button>
+
+                <div className="text-center">
+                  <span className="text-muted text-sm">or</span>
+                </div>
+
+                <Button
+                  type="button"
+                  onClick={onCreateAccount}
+                  variant="outline"
+                  className="w-full border-border bg-background hover:bg-secondary/10 transition-all duration-200"
+                  disabled={loginMutation.isPending}
+                >
+                  <Plus className="mr-2 h-4 w-4" />
+                  Create New Account
                 </Button>
               </form>
             </Form>
